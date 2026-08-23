@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern AI Chatbot Web Application">
+  <title>NovaChat — AI Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <div>
+          <strong>NovaChat</strong>
+          <span>AI Assistant</span>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChatBtn"><span>＋</span> New chat</button>
+
+      <div class="side-section">
+        <div class="section-title">Quick prompts</div>
+        <button class="prompt-btn" data-prompt="Explain Python in simple words">🐍 Explain Python</button>
+        <button class="prompt-btn" data-prompt="Give me a project idea for AI and ML">💡 Project idea</button>
+        <button class="prompt-btn" data-prompt="Help me prepare for an interview">🎯 Interview help</button>
+        <button class="prompt-btn" data-prompt="Explain HTML, CSS and JavaScript">🌐 Web development</button>
+      </div>
+
+      <div class="side-bottom">
+        <button class="side-action" id="historyBtn">🕘 <span>Chat history</span></button>
+        <button class="side-action" id="clearHistoryBtn">🗑️ <span>Clear history</span></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="status">
+          <span class="online-dot"></span>
+          <span>AI Assistant <small>Online</small></span>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button>
+          <button class="avatar">AS</button>
+        </div>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="hero-icon">✦</div>
+          <p class="eyebrow">YOUR SMART CONVERSATION PARTNER</p>
+          <h1>How can I help<br><span>you today?</span></h1>
+          <p class="welcome-text">Ask questions, explore ideas, learn something new, or get help with your projects.</p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Give me a simple Python project idea">🚀 <span>Give me a project idea</span><b>→</b></button>
+            <button class="suggestion" data-prompt="Explain artificial intelligence for a beginner">🧠 <span>Explain AI for beginners</span><b>→</b></button>
+            <button class="suggestion" data-prompt="Help me write a professional introduction">✍️ <span>Write a professional intro</span><b>→</b></button>
+          </div>
+        </div>
+        <div id="messages"></div>
+      </section>
+
+      <div class="composer-wrap">
+        <div class="composer">
+          <button class="attach-btn" id="attachBtn" title="Attachment demo">＋</button>
+          <textarea id="messageInput" rows="1" placeholder="Message NovaChat..." autocomplete="off"></textarea>
+          <button class="mic-btn" id="micBtn" title="Voice input">🎙</button>
+          <button class="send-btn" id="sendBtn" title="Send message">➤</button>
+        </div>
+        <div class="composer-note">NovaChat can make mistakes. Check important information.</div>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
